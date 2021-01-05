@@ -1,0 +1,13 @@
+#item
+
+item.soulmagic.soul.name=Soul
+
+item.soulmagic.soul_seed.name=Soul Seed
+
+#block
+
+tile.soulmagic.solid_state_soul.name=Soul Block
+
+tile.soulmagic.soul_ore.name=Soul Ore
+
+tile.soulmagic.soul.crop.name=Soul Crop

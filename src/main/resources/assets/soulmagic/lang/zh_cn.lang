@@ -1,0 +1,13 @@
+#物品
+
+item.soulmagic.soul.name=灵魂
+
+item.soulmagic.soul_seed.name=灵魂种子
+
+#方块
+
+tile.soulmagic.solid_state_soul.name=凝固灵魂块
+
+tile.soulmagic.soul_ore.name=灵魂结晶矿
+
+tile.soulmagic.soul.crop.name=灵魂作物
