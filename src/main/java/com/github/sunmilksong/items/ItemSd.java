@@ -43,8 +43,8 @@ public class ItemSd extends ItemSeeds implements IHasModel {
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
         Block plantingBlock = worldIn.getBlockState(pos).getBlock();
-        System.out.println(Iplants);
-        if (Iplants.getRegistryName().toString().equalsIgnoreCase("soulmagic:soul_crop") && plantingBlock == Blocks.DIAMOND_BLOCK) {
+
+        if (Iplants!= null && Iplants.getRegistryName().toString().equalsIgnoreCase("soulmagic:soul_crop") && plantingBlock == Blocks.DIAMOND_BLOCK) {
             ItemStack itemstack = player.getHeldItem(hand);
 
             if (facing == EnumFacing.UP && player.canPlayerEdit(pos.offset(facing), facing, itemstack) && worldIn.isAirBlock(pos.up())) {
