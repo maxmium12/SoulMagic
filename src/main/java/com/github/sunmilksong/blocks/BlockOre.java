@@ -49,7 +49,6 @@ public class BlockOre extends Block implements IHasModel {
 
 
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(Objects.requireNonNull(this.getRegistryName())));
     }
 
     //挖掘掉落

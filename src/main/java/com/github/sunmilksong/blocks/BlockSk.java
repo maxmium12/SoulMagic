@@ -39,8 +39,6 @@ public class BlockSk extends Block implements IHasModel {
 
         ModBlocks.BLOCKS.add(this);
 
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(Objects.requireNonNull(this.getRegistryName())));
-
 
     }
 

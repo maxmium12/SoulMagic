@@ -9,12 +9,15 @@ import net.minecraft.block.Block;
 
 import net.minecraft.item.Item;
 
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 
 import net.minecraftforge.event.RegistryEvent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.stream.Collectors;
 
 @Mod.EventBusSubscriber
 public class RegistryHandler {
@@ -23,14 +26,15 @@ public class RegistryHandler {
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
 
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
-
+        event.getRegistry().registerAll(ModBlocks.BLOCKS.stream()
+                .map(block -> new ItemBlock(block).setRegistryName(block.getRegistryName()))
+                .toArray(Item[]::new));
     }
 
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event) {
 
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
-
     }
 
 
