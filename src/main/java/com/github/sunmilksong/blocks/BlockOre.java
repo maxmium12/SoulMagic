@@ -8,10 +8,8 @@ import com.github.sunmilksong.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-
 import net.minecraft.block.state.IBlockState;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -35,21 +33,22 @@ import java.util.Random;
 
 public class BlockOre extends Block implements IHasModel {
 
-    public BlockOre(String name, Material material) {
+    public BlockOre(String name, Material material, String toolClass, int level) {
 
         super(Material.ROCK, MapColor.STONE);
 
-        setUnlocalizedName(Reference.MOD_ID + "." + name);
-        setRegistryName(name);
-        setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
-        setSoundType(SoundType.STONE);//声音
-        setHardness(2.5F);//硬度
-        setHarvestLevel("pickaxe", 2);//工具和挖掘等级
+        this.setUnlocalizedName(Reference.MOD_ID + "." + name);
+        this.setRegistryName(name);
+        this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+
+        this.setHarvestLevel(toolClass, level);
+        this.setSoundType(SoundType.STONE);
 
 
         ModBlocks.BLOCKS.add(this);
     }
+
 
     //挖掘掉落
     @Nonnull
