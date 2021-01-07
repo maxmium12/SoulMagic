@@ -3,6 +3,7 @@ package com.github.sunmilksong.blocks;
 
 import com.github.sunmilksong.Main;
 
+import com.github.sunmilksong.api.NoItemBlock;
 import com.github.sunmilksong.init.ModBlocks;
 import com.github.sunmilksong.init.ModItems;
 
@@ -26,6 +27,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
+@NoItemBlock
 public class BlockCrop extends BlockCrops implements IHasModel, IGrowable {
 
     public BlockCrop(String name) {

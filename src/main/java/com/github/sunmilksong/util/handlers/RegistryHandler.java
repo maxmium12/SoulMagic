@@ -1,5 +1,6 @@
 package com.github.sunmilksong.util.handlers;
 
+import com.github.sunmilksong.api.NoItemBlock;
 import com.github.sunmilksong.init.ModBlocks;
 import com.github.sunmilksong.init.ModItems;
 
@@ -27,6 +28,7 @@ public class RegistryHandler {
 
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         event.getRegistry().registerAll(ModBlocks.BLOCKS.stream()
+                .filter(block -> !block.getClass().isAnnotationPresent(NoItemBlock.class))
                 .map(block -> new ItemBlock(block).setRegistryName(block.getRegistryName()))
                 .toArray(Item[]::new));
     }
