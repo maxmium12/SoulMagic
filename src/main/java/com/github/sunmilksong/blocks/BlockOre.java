@@ -38,13 +38,12 @@ public class BlockOre extends Block implements IHasModel {
 
     public BlockOre(String name, Material material, String toolClass, int level) {
 
-        super(Material.ROCK,MapColor.STONE);
+        super(Material.ROCK, MapColor.STONE);
 
 
         this.setUnlocalizedName(Reference.MOD_ID + "." + name);
         this.setRegistryName(name);
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
 
         this.setHarvestLevel(toolClass, level);
         this.setSoundType(SoundType.STONE);
@@ -56,30 +55,29 @@ public class BlockOre extends Block implements IHasModel {
     }
 
 
-
-//挖掘掉落
-@Nonnull
-@Override
-public Item getItemDropped(IBlockState state,Random rand,int fortune){
+    //挖掘掉落
+    @Nonnull
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return ModItems.SOUL;
-        }
+    }
 
-//物品掉落数量
-@Override
-public int quantityDropped(Random random){
+    //物品掉落数量
+    @Override
+    public int quantityDropped(Random random) {
         return 3;
-        }
+    }
 
-//鼠标中键选取
-@Override
-public ItemStack getPickBlock(IBlockState state,RayTraceResult target,World world,BlockPos pos,EntityPlayer player){
+    //鼠标中键选取
+    @Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
         return new ItemStack(this);
-        }
+    }
 
-//注册
-@Override
-public void registerModels(){
+    //注册
+    @Override
+    public void registerModels() {
 
-        Main.proxy.registerItemRenderer(Item.getItemFromBlock(this),0,"inventory");
-        }
-        }
+        Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+    }
+}
